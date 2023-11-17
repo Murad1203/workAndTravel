@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: MMY12
+      changes:
+        - createTable:
+            tableName: advice
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: phone
+                  type: VARCHAR(255)
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+              - column:
+                  name: type_question_id
+                  type: BIGINT
+              - column:
+                  name: message
+                  type: TEXT
+            foreignKeyConstraints:
+              - foreignKeyConstraint:
+                  baseColumnNames: type_question_id
+                  baseTableName: advice
+                  constraintName: fk_advice_type_question
+                  referencedColumnNames: id
+                  referencedTableName: type_question
+                  onDelete: CASCADE

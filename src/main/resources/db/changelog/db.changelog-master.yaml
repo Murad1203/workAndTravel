@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - include:
+      file: classpath:db/changelog/changes/001-create-question.yaml
+  - include:
+      file: classpath:db/changelog/changes/001-create-advice.yaml
+  - include:
+      file: classpath:db/changelog/changes/001-create-feedback.yaml
+  - include:
+      file: classpath:db/changelog/changes/001-create-image.yaml
+  - include:
+      file: classpath:db/changelog/changes/001-create-service.yaml
+  - include:
+      file: classpath:db/changelog/changes/001-create-travel.yaml
+
+

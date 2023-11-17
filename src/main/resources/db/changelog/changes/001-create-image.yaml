@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: MMY12
+      changes:
+        - createTable:
+            tableName: image
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: path
+                  type: VARCHAR(255)
+              - column:
+                  name: feedback_id
+                  type: BIGINT
+            foreignKeyConstraints:
+              - foreignKeyConstraint:
+                  baseColumnNames: feedback_id
+                  baseTableName: image
+                  constraintName: fk_image_feedback
+                  referencedColumnNames: id
+                  referencedTableName: feedback
+                  onDelete: CASCADE

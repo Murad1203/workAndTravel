@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6
+      author: MMY12
+      changes:
+        - createTable:
+            tableName: type_question
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: type_question_text
+                  type: VARCHAR(255)
