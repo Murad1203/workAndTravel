@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+
+  workAndTravel:
+    image:
+    ports:
+      - "8080:8080"
+
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ilwl
+      POSTGRES_USER: mmy12
+      POSTGRES_PASSWORD: mmy12
+    ports:
+      - "5445:5432"
